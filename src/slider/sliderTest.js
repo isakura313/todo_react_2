@@ -3,11 +3,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const imgs = [
-  "https://i.pinimg.com/originals/8b/e9/e1/8be9e1c438dff0c78ac2f264817a7bc6.jpg",
-  "https://www.vinterier.ru/pictures/shop/malenkiiy-peiyzag-kartina-maslom-40x30.JPG",
+  "https://cdn.getyourguide.com/img/country/58de1486a0b8d.jpeg/88.jpg",
+  "https://i.pinimg.com/originals/63/84/c9/6384c9307df4c18576e564ab90d8e1f6.png",
 ];
 const cssStyles ={
-  width: "500px"
+  width: "900px",
+  margin: "0 auto"
 }
 
 const imgItems = imgs.map((img_src) => (
@@ -18,7 +19,8 @@ const imgItems = imgs.map((img_src) => (
 
 export default function Sli() {
   var settings = {
-    dots: true,
+    dots: false,
+    fade: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
