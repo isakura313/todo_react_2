@@ -1,28 +1,39 @@
 import "./App.css";
 import Sli from './slider/sliderTest'
-// import Greet from './greet/greet'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './Home'
 import FilmsList from './filmsList/filmsList'
+import Location from './location/Location'
 
-async function data (){
-  let url = 'https://ghibliapi.herokuapp.com/films'
-  let response = await fetch(url);
-  let json = await response.json();
-  // console.table(json[0])
-  return json
-}
-(async ()=>{
-let info = await data()
-// console.log(info[0])
-})()
 
 function App() {
   return (
-    <div className="App">
-      <h1> Фильмы студии Гимли </h1>
-      <Sli />
-      {/* <Greet /> */}
-      <FilmsList/>
-    </div>
+    // <div className="App">
+      <Router>
+      <header>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/films">FilmsList</Link></li> 
+            <li> <Link to="/locations">Locations</Link> </li>
+        </ul>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/films">
+            <FilmsList />
+          </Route>
+          <Route path="/locations">
+            <Location />
+          </Route>
+        </Switch>
+      </header>
+    </Router>
   );
 }
 

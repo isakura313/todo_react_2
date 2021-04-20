@@ -1,21 +1,24 @@
 import React from "react";
-import film from "../fixtures.json";
+// import film from "../fixtures.json";
 import FilmInfo from "../filmInfo/filmInfo";
+import axios from 'axios';
 
-console.log(film);
+
 class FilmsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      films: film,
+      films: [],
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    let data = await axios.get('https://ghibliapi.herokuapp.com/films')
     this.setState({
-      films: film,
+      films: data.data,
     });
   }
+
   render() {
     return (
       <div>

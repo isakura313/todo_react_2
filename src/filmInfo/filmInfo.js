@@ -8,6 +8,7 @@ function FilmInfo(props) {
         <h3> {props.director}</h3>
         <p> {props.description}</p>
         <span>{props.release_date} </span>
+        <a href='#'>  Узнать больше </a>
     </div>
     )
   }
