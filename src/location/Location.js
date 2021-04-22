@@ -7,6 +7,7 @@ class Location extends React.Component{
             locations: ["Город которого нет"]
         }
     }
+    // https://ghibliapi.herokuapp.com/locations
     render(){
         return(
             <div>

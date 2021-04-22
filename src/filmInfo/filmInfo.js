@@ -4,6 +4,7 @@ import './filmInfo.css'
 function FilmInfo(props) {
     return(
     <div key={props.id} className="film_cont">
+       <p>  {props.poster}</p> 
         <h1>{props.title}</h1>
         <h3> {props.director}</h3>
         <p> {props.description}</p>
