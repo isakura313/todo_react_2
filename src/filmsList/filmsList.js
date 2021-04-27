@@ -14,7 +14,11 @@ class FilmsList extends React.Component {
   }
 
   async componentDidMount() {
-    let data = await axios.get('https://ghibliapi.herokuapp.com/films')
+    let data = await axios.get('http://localhost/3000/films', {
+      headers: {
+        'Access-Control-Allow-Origin': true,
+      },
+    })
     // const posters_data = []
     // let posters = await data.data.map( async (film)=>{
     //   // console.log(film.title)
