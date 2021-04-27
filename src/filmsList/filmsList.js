@@ -15,21 +15,19 @@ class FilmsList extends React.Component {
 
   async componentDidMount() {
     let data = await axios.get('https://ghibliapi.herokuapp.com/films')
-    const posters_data = []
-    let posters = await data.data.map( async (film)=>{
-      // console.log(film.title)
-      return await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=daf505c5946495d627705675649bad8f&query=${film.title}`)
-    })
-    Promise.all(posters).then(responses => responses.forEach(
-         response => posters_data.push(response)  
+    // const posters_data = []
+    // let posters = await data.data.map( async (film)=>{
+    //   // console.log(film.title)
+    //   return await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=daf505c5946495d627705675649bad8f&query=${film.title}`)
+    // })
+    // Promise.all(posters).then(responses => responses.forEach(
+    //      response => posters_data.push(response)  
 
-    // http://image.tmdb.org/t/p/w500/
+    // // http://image.tmdb.org/t/p/w500/
 
     this.setState({
       films: data.data,
-      posters: posters_data
     });
-    ));
   }
  
 
